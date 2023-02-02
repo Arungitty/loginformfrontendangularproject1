@@ -1,0 +1,29 @@
+<p>loginform works!</p>
+<div class="container">
+<form [formGroup]="registerForm">
+    <div class="form-group" >
+    <label for="1">Username</label><br>
+    <input type="text" placeholder="username" name="username" id=1 #input required  class="form-control" formControlName="userName" [ngClass]="{'is-invalid' : submitted && f['userName'].errors}">
+</div>
+  <!--  // custom validation -->
+  <div *ngIf="submitted && f['userName'].errors">
+    <div *ngIf="submitted && f['userName'].errors['required']"> user name is required and cant be empty </div>
+   </div>
+   <br>
+   <div class="form-group">
+    <label for="2">Password</label><br>
+    <input type="password" placeholder="password" name="password" id=2 class="form-control" formControlName="password" [ngClass]="{'is-invalid' : submitted && f['password'].errors}">
+</div>
+<br>
+
+<!--  // custom validation(Here we can create validation by ourself) -->
+<div *ngIf="submitted && f['password'].errors">
+    <div *ngIf="submitted && f['password'].errors['required']" class="invalid-feedback"> password is required and cant be empty </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">login</button>
+
+<a routerLink="/signup" style="color:aliceblue; margin-left:30px">if not registered yet? please signup!</a>
+</form>
+</div>
+

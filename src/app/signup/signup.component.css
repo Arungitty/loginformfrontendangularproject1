@@ -1,0 +1,14 @@
+input{
+    border:solid 3px black;
+    border-radius:25px;
+    border-color: aqua;
+}
+
+label{
+    color:black;
+    margin-left:5px;
+}
+
+a{
+    margin-left:20px;
+}

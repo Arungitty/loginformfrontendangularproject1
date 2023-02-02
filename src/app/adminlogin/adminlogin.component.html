@@ -1,0 +1,26 @@
+<p>adminlogin works!</p>
+
+<div class="container">
+    <form [formGroup]="registerForm" >
+        <div class="form-group">
+        <label for="3">Admin username</label><br>
+        <input type="text" placeholder="username" #adminname value="adminUserName" name="adminUsername" id=3 class="form-control" formControlName="adminUserName" [ngClass]="{'is-invalid' : submitted && f['adminUserName'].errors}">
+    </div>
+     <!--  // custom validation -->
+  <div *ngIf="submitted && f['userName'].errors">
+    <div *ngIf="submitted && f['userName'].errors['required']"> admin user name is required and can't be empty </div>
+   </div>
+    <br>
+    <div class="form-group">
+        <label for="4">Admin Password</label><br>
+        <input type="password" placeholder="adminPassword" name="adminPassword" id=4 class="form-control" formControlName="adminPassword" [ngClass]="{'is-invalid' : submitted && f['adminPassword'].errors}">
+    </div>
+    <!--  // custom validation(Here we can create validation by ourself) -->
+    <div *ngIf="submitted && f['adminPassword'].errors">
+    <div *ngIf="submitted && f['adminPassword'].errors['required']" class="invalid-feedback"> admin password is required and can't be empty </div>
+    </div>
+
+    <br>
+        <button type="submit" class="btn btn-success" (click)="onSubmit()">login</button>
+    </form>
+    </div>

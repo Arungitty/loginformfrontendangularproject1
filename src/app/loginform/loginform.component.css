@@ -1,0 +1,20 @@
+ .btn btn-primary{
+    margin-top: 50px;
+} 
+
+label{
+    color:black;
+    margin-left: 10px;
+}
+
+input{
+    border-radius:25px;
+    border:solid 2px black;
+    width: 350px;
+}
+
+button{
+    border:solid 2px black;
+}
+
+

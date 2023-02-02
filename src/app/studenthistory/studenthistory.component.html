@@ -1,0 +1,21 @@
+<p>studenthistory works!</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>StudentId</th><th>StudentName</th><th>StudentEmail</th><th>ContactNumber</th>
+            <th>StudentResume</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.studentId}}</td>
+            <td>{{u.studentName}}</td>
+            <td>{{u.studentEmail}}</td>
+            <td>{{u.contactNumber}}</td>
+            <td><a class="btn btn-success" download href="./{{u.studentResume}}"> Download CV {{u.studentResume}}</a></td>
+
+        </tr>
+    </tbody>
+
+</table>
